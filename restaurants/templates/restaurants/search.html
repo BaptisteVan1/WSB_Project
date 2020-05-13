@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="content">
+<p>
+Search by name or city
+<form action="{% url 'restaurants:search_results' %}" method="get" class="form-inline">
+    <div class="form-group mx-sm-3 mb-2">
+        <input name="q" type="text" placeholder="Search...">
+    </div>
+    <div>
+        <div class="button">
+	<button type="submit" class="btn btn-outline-secondary btn-lg" >Search</button>
+	</div>
+    </div>
+</form>
+</p>
+<h2>Search Results:</h2>
+    <ul class="list-group-flush">
+        {% for restaurant in object_list %}
+            <li class="list-group-item"><a href="{% url 'restaurants:details' restaurant.id %}">
+                  {{ restaurant.restaurant_name }}, {{ restaurant.restaurant_city }} - {{ restaurant.restaurant_cuisine_type }}
+                </a>
+            </li>
+      {% endfor %}
+    </ul>
+<p>Can't find the place you're looking for? It's probably not yet registered in our database. =(</p>
+<p><a href="{% url 'restaurants:index' %}">Back to the main page</a> </p>
+</div>
+{% endblock %}

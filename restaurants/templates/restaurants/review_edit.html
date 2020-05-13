@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content">
+<h2>Edit the review you posted for this restaurant:</h2>
+<form method="post">
+    {% csrf_token %}
+    <input type="Hidden" name="restaurant" value="{{restaurant.restaurant_id}}">
+    {{ form|crispy}}
+    <br>
+    <div class="button">
+	<button type="submit" class="btn btn-outline-secondary btn-lg" >Change review</button>
+	</div>
+</form>
+<p><a href="{% url 'restaurants:index' %}">Back to the main page</a> </p>
+</div>
+{% endblock %}

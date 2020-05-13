@@ -1,0 +1,53 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<header class="header">
+
+            <h1>Welcome to Your restaurant <br>data-base</h1>
+                <h5>Read and create reviews of your favourite restaurants</h5>
+                <br>
+                <button class="btn btn-outline-secondary btn-lg">See more</button>
+</header>
+<div>
+    <p>Search by name or city</p>
+<form action="{% url 'restaurants:search_results' %}" method="get" class="form-inline">
+    <div class="form-group mx-sm-3 mb-2">
+        <input name="q" type="text" placeholder="Search...">
+    </div>
+    <div class="button">
+        <button type="submit" class="btn btn-outline-secondary btn-lg">Search</button>
+    </div>
+</form>
+<!-- <form action="{% url 'restaurants:search_results' %}" method="get" class="form-inline">
+    <div class="form-group mx-sm-3 mb-2">
+        <select id="filter_cuisine_type" name="FilterCuisineType">
+            <option value="" disabled selected>Select your option</option>
+            <option value="Traditional / polish">Traditional / polish</option>
+            <option value="Italian">Italian</option>
+            <option value="American / burger">American / burger</option>
+            <option value="Indian">Indian</option>
+            <option value="Thai">Thai</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Japanese / sushi">Japanese / sushi</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+    <div>
+        <input type="submit" class="btn btn-primary mb-2"  value="Filter">
+    </div>
+</form> -->
+
+    {% if restaurants_list %}
+    <ul class="list-group">
+        {% for restaurant in restaurants_list %}
+        <li class="list-group-item"><a href="{% url 'restaurants:details' restaurant.id %}">
+            {{ restaurant.restaurant_category  }} - {{ restaurant.restaurant_name }}, {{ restaurant.restaurant_city }} - {{ restaurant.restaurant_cuisine_type }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No restaurants have been registered yet, do you want <a href="{% url 'restaurants:NewRestaurant' %}">register yours?</a></p>
+    {% endif %}
+</div>
+{% endblock %}

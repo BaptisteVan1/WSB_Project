@@ -1,0 +1,53 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="content">
+<h2>{{restaurant.restaurant_name}}</h2>
+<div>
+    <div class="row">
+        <div class="col-sm">
+            <p>
+                Average Grade:<br>
+                <span><b>PLACEHOLDER</b></span>
+            </p>
+        </div>
+        <div class="col-sm">
+            <p>
+                Type of place:<br>
+                {{restaurant.restaurant_category}}<br>
+                Cuisine type: <br>
+                {{restaurant.restaurant_cuisine_type}}
+            <p>
+        </div>
+        <div class="col-sm">
+            <p>
+                Additional info: <br>
+                Address: {{restaurant.restaurant_street_number}} {{restaurant.restaurant_address}},
+                {{restaurant.restaurant_city}}<br>
+                Website: <a href="{{restaurant.restaurant_website_link}}" target="_blank">
+                {{restaurant.restaurant_website_link}}</a><br>
+
+            </p>
+        </div>
+    </div>
+</div>
+
+<h3>Reviews:</h3>
+{% for userreview in user_review_list %}
+<ul>
+    <li>
+        Grade: {{ userreview.user_review_grade }}/5<br>
+        {{ userreview.user_review_comment }}<br>
+        {{ userreview.posted_by|capfirst }}
+
+        {% if userreview.edit %}<a href="{{userreview.edit}}">
+        Edit</a>{% endif %}<br>
+
+
+</ul>
+{% endfor %}
+
+<p><a href="/restaurants/{{ restaurant.id }}/reviewing">Write a review for this restaurant</a> </p>
+<p><a href="{% url 'restaurants:index' %}">Back to the main page</a> </p>
+</div>
+{% endblock %}

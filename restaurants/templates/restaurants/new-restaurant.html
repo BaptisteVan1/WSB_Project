@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content">
+<h2>Register your restaurant here:</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <br>
+    <div class="button">
+	<button type="submit" class="btn btn-outline-secondary btn-lg" >Register new restaurant</button>
+	</div>
+</form>
+<p><a href="{% url 'restaurants:index' %}">Back to the main page</a> </p>
+</div>
+{% endblock %}
