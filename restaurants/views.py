@@ -10,6 +10,7 @@ from django.views.generic.list import ListView
 from django.db.models import Q, Min, Max, Avg
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+import requests
 
 
 

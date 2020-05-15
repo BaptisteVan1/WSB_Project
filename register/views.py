@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from .forms import RegisterForm
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth import login, authenticate
+import requests
 
 
 # Create your views here.
