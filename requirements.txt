@@ -1,38 +1,9 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-asgiref==3.2.3
-dj-database-url==0.5.0
-Django==3.0.3
-django-crispy-forms==1.9.0
-django-heroku==0.3.1
-gunicorn==20.0.4
-psycopg2==2.8.5
-pytz==2019.3
-six==1.14.0
-sqlparse==0.3.0
-whitenoise==5.0.1
-django
-gunicorn
-django-heroku
-=======
->>>>>>> 751ae3a
-asgiref==3.2.3
-dj-database-url==0.5.0
-Django==3.0.3
-django-crispy-forms==1.9.0
-django-heroku==0.3.1
-gunicorn==20.0.4
-psycopg2==2.8.5
-pytz==2019.3
-six==1.14.0
-sqlparse==0.3.0
-whitenoise==5.0.1
-django
-gunicorn
-django-heroku
-<<<<<<< HEAD
-=======
->>>>>>> 960f9a1... This is a test commit with deployment preparations
->>>>>>> 751ae3a
-requests
+$ pip freeze > requirements.txt
+You should see somthing like this :
+dj-database-url==version
+Django==version
+gunicorn==version
+psycopg2==version
+psycopg2-binary==version
+pytz==version
+whitenoise==version
