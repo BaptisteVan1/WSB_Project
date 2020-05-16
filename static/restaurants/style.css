@@ -1,0 +1,98 @@
+.active-pink-2 input[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid #f48fb1;
+    box-shadow: 0 1px 0 0 #f48fb1;
+  }
+
+.navbar{ background:#F97300;}
+
+.nav-link , .navbar-brand{ color: #f4f4f4; cursor: pointer;}
+
+.nav-link{ margin-right: 1em !important;}
+
+.nav-link:hover{ background: #f4f4f4; color: #f97300; }
+
+.navbar-collapse{ justify-content: flex-end;}
+
+
+.navbar-toggler{  background:#fff !important;}
+
+.header{
+    /*background-image: url('/static/restaurants/img/headerback.jpg');*/
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background: rgba(244, 244, 244, 0.79);
+    left: 0;
+    top: 0;
+    top: 30%;
+    margin: auto;
+    padding: 50px;
+    text-align: center;
+   }
+
+
+body {
+    background-image: url('static/restaurants/img/headerback.jpg');
+    background-color: #cccccc;
+    background-size: cover;
+   }
+
+.overlay{
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(244, 244, 244, 0.79);
+    }
+
+
+.description{
+
+    top: 15%;
+    margin: auto;
+    text-align: center;
+    }
+
+.header h1{
+    color:#F97300 ;
+    }
+
+.header p{
+    color:#666;
+    font-size: 20px;
+    width: 50%;
+    line-height: 1.5;
+    text-align: center;
+    }
+
+.header button{
+     border:1px  solid #F97300;
+     background:#F97300;
+     color:#fff;
+    }
+
+.button button{
+     border:1px  solid #F97300;
+     background:#F97300;
+     color:#fff;
+     margin: 10px;
+    }
+
+.content{
+    background: rgba(244, 244, 244, 0.79);
+    background-size: cover;
+    background-position: center;
+    background: rgba(244, 244, 244, 0.79);
+    left: 0;
+    top: 0;
+    top: 30%;
+    margin: auto;
+    padding: 50px;
+}
+
+h2{
+    color:#F97300 ;
+    }
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
