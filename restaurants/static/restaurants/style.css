@@ -32,7 +32,7 @@
 
 
 body {
-    
+    background-image: url('static/restaurants/img/headerback.jpg');
     background-color: #cccccc;
     background-size: cover;
    }
