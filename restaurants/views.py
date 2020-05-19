@@ -56,7 +56,7 @@ class new_restaurant (LoginRequiredMixin, CreateView):
 
     # Post the data into the DB
     def post(self, request):
-        form = NewRestaurant(request.POST)
+        form = NewRestaurant(request.POST, request.FILES)
         if form.is_valid():
             restaurant = form.save(commit=False) # saves the form
             form.instance.created_by = self.request.user # adds the user logged in
