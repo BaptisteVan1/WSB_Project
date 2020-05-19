@@ -1,6 +1,7 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+<br><br>
 <header class="header">
 
             <h1>Welcome to Your restaurant <br>data-base</h1>
@@ -9,10 +10,10 @@
                 <!--<button class="btn btn-outline-secondary btn-lg">See more</button>-->
 </header>
 <div>
-    <p>Search by name or city</p>
+
 <form action="{% url 'restaurants:search_results' %}" method="get" class="form-inline">
     <div class="form-group mx-sm-3 mb-2">
-        <input name="q" type="text" placeholder="Search...">
+        <input name="q" type="text" placeholder="Search by name or city">
     </div>
     <div class="button">
         <button type="submit" class="btn btn-outline-secondary btn-lg">Search</button>
