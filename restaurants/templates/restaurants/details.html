@@ -7,25 +7,25 @@
     <div class="row">
         <div class="col-sm">
             <p>
-                Average Grade:<br>
-                <span><b>PLACEHOLDER</b></span>
-            </p>
-        </div>
-        <div class="col-sm">
-            <p>
                 Type of place:<br>
                 {{restaurant.restaurant_category}}<br>
                 Cuisine type: <br>
                 {{restaurant.restaurant_cuisine_type}}
-            <p>
+            </p>
         </div>
         <div class="col-sm">
             <p>
-                Additional info: <br>
+                <img src="/pic_folder/{{restaurant.picture}}">
+            </p>
+        </div>
+        <div class="col-sm">
+            <p>
                 Address: {{restaurant.restaurant_street_number}} {{restaurant.restaurant_address}},
                 {{restaurant.restaurant_city}}<br>
                 Website: <a href="{{restaurant.restaurant_website_link}}" target="_blank">
                 {{restaurant.restaurant_website_link}}</a><br>
+                Mail: {{restaurant.restaurant_email}}<br>
+                Phone: {{restaurant.restaurant_phone}}
 
             </p>
         </div>
