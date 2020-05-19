@@ -47,7 +47,6 @@ class EditReviewForm(forms.ModelForm):
 # for for creating a new restaurant
 class NewRestaurant(forms.ModelForm):
     class Meta:
-        model = Restaurant
         fields =[
             'restaurant_name',
             'restaurant_address',
@@ -56,7 +55,11 @@ class NewRestaurant(forms.ModelForm):
             'restaurant_cuisine_type',
             'restaurant_category',
             'restaurant_website_link',
+            'restaurant_tel',
+            'restaurant_email',
+            'picture',
         ]
+        model = Restaurant
 
         widgets = {
             'restaurant_name': forms.TextInput(attrs={'placeholder': 'Your restaurant\'s name'}),
@@ -66,6 +69,9 @@ class NewRestaurant(forms.ModelForm):
             'restaurant_cuisine_type': forms.Select,
             'restaurant_category': forms.Select,
             'restaurant_website_link': forms.TextInput(attrs={'placeholder': 'ex: www.MyRestaurant.com'}),
+            'restaurant_tel': forms.TextInput(attrs={'placeholder':'Your phone number'}),
+            'restaurant_email': forms.TextInput(attrs={'placeholder':'Your email address'}),
+            'restaurant_picture': forms.FileField,
         }
 
         labels = {
@@ -76,4 +82,6 @@ class NewRestaurant(forms.ModelForm):
             'restaurant_cuisine_type': 'Cuisine type:',
             'restaurant_category': 'Category',
             'restaurant_website_link': 'Website',
+            'restaurant_phone':'Phone number',
+            'restaurant_email':'Email address',
         }
