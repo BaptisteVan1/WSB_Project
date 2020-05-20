@@ -20,12 +20,12 @@
         </div>
         <div class="col-sm">
             <p>
-                Address: {{restaurant.restaurant_street_number}} {{restaurant.restaurant_address}},
+                {{restaurant.restaurant_street_number}} {{restaurant.restaurant_address}},
                 {{restaurant.restaurant_city}}<br>
-                Website: <a href="{{restaurant.restaurant_website_link}}" target="_blank">
+                <a href="{{restaurant.restaurant_website_link}}" target="_blank">
                 {{restaurant.restaurant_website_link}}</a><br>
-                Mail: {{restaurant.restaurant_email}}<br>
-                Phone: {{restaurant.restaurant_phone}}
+                <a href="mailto:{{restaurant.restaurant_email}}" target="_blank">{{restaurant.restaurant_email}}</a><br>
+                <a href="tel:{{restaurant.restaurant_phone}}">{{restaurant.restaurant_tel}}</a>
 
             </p>
         </div>
