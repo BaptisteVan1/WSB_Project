@@ -15,6 +15,8 @@ import requests
 
 
 
+
+
 # View showing the restaurant list. This will bo home-ish page
 def index(request):
     restaurants_list = Restaurant.objects.order_by('-id')
@@ -56,7 +58,7 @@ class new_restaurant (LoginRequiredMixin, CreateView):
 
     # Post the data into the DB
     def post(self, request):
-        form = NewRestaurant(request.POST, request.FILES)
+        form = NewRestaurant(request.POST)
         if form.is_valid():
             restaurant = form.save(commit=False) # saves the form
             form.instance.created_by = self.request.user # adds the user logged in
@@ -102,13 +104,13 @@ class EditReview (LoginRequiredMixin, UpdateView):
         obj = get_object_or_404(UserReview, pk=pk)
         form = UserReviewForm(request.POST, instance=obj)
         restaurant = obj.restaurant
-        if form.is_valid():
+        if form.is_valid () and self.request.user == obj.posted_by:
             edit_review = form.save(commit=False)
             form.instance.posted_by = self.request.user
             print(edit_review)  # Print so I can see in cmd prompt that something posts as it should
             edit_review.save()
             return HttpResponseRedirect(reverse_lazy('restaurants:details', args=[restaurant.id]))
-        return render(request, 'restaurants/details.html', {'form': form})
+        return render(request, 'restaurants/not_authorized.html')
 
 # This view allows user to use a basic filtering search for restaurants:
 class SearchResults(ListView):
@@ -127,4 +129,9 @@ class SearchResults(ListView):
 def welcome(request):
     template = loader.get_template('restaurants/welcome.html')
     context={}
+    return HttpResponse(template.render(context, request))
+
+def not_authorized(request):
+    template = loader.get_template('restaurants/not_authorized.html')
+    context = {}
     return HttpResponse(template.render(context, request))
