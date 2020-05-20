@@ -1,0 +1,11 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="content">
+    <br>
+<p>Oops, seems that you tried to modify a comment that doesn't belong to you...</p>
+
+    <p>Go back to the <a href="{% url 'restaurants:index' %}">main page</a></p>
+</div>
+{% endblock %}
+
